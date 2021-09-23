@@ -1,0 +1,19 @@
+{
+  "name": "number-baseball",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridia13/number-baseball2021.git"
+  },
+  "author": "Lydia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ridia13/number-baseball2021/issues"
+  },
+  "homepage": "https://github.com/ridia13/number-baseball2021#readme"
+}
