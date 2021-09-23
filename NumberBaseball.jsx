@@ -41,58 +41,58 @@ class NumberBaseball extends Component{
     }
   }
 
-  checkPN(value) { //기존 숫자와의 중복확인
-    const {tries,value} = this.state;
-    let overlapPN = false;
-    tries.forEach((v,i) => {
-      if(v.try === value){
-        overlapPN = true;
-      }
-    })
+  // checkPN(value) { //기존 숫자와의 중복확인
+  //   const {tries,value} = this.state;
+  //   let overlapPN = false;
+  //   tries.forEach((v,i) => {
+  //     if(v.try === value){
+  //       overlapPN = true;
+  //     }
+  //   })
   
-    if (overlapPN) {
-      alert("기존 숫자와 중복됩니다. 다시 입력해수세요.");
-    } else {
+  //   if (overlapPN) {
+  //     alert("기존 숫자와 중복됩니다. 다시 입력해수세요.");
+  //   } else {
       
-      checkResult(value);
-    }
-  }
+  //     checkResult(value);
+  //   }
+  // }
   
-  strikeAndBall(number) {
+  // strikeAndBall(number) {
     
-    const arrPick = number.split('');
-    const arrPN = arrPick.map((v) => Number(v));
+  //   const arrPick = number.split('');
+  //   const arrPN = arrPick.map((v) => Number(v));
   
-    randomNums.forEach((v, i) => { //b,s 출력
-      if (arrPN.includes(v)) {
-        i === arrPN.indexOf(v) ? strike++ : ball++;
-      }
-    })
-    checkOut(number);
-    strike = 0;
-    ball = 0;
-  }
+  //   randomNums.forEach((v, i) => { //b,s 출력
+  //     if (arrPN.includes(v)) {
+  //       i === arrPN.indexOf(v) ? strike++ : ball++;
+  //     }
+  //   })
+  //   checkOut(number);
+  //   strike = 0;
+  //   ball = 0;
+  // }
 
-   checkResult(number) {//입력 결과 확인
-    const {answer, value, result, tries} = this.state;
-    const joinAnswer = answer.join('');
-    const br = document.createElement('br');
+  //  checkResult(number) {//입력 결과 확인
+  //   const {answer, value, result, tries} = this.state;
+  //   const joinAnswer = answer.join('');
+  //   const br = document.createElement('br');
   
-    if (joinAnswer === value) {//HR확인
-      this.setState({
-        result:`${joinAnswer} HomeRun🎉`,
-      })
-    } else if (tries.length >= 9) {//시도횟수 확인
-      this.setState({
-        result:`${value} : You failed😓 정답 : ${joinAnswer} `,
-      })
-    } else {//s,b 출력
-      this.setState((prevState) => {
-        tries:[...prevState.tries, {try: value, result: `${strike}S ${ball}B`}],
-      })
-      strikeAndBall(number);
-    }
-  }
+  //   if (joinAnswer === value) {//HR확인
+  //     this.setState({
+  //       result:`${joinAnswer} HomeRun🎉`,
+  //     })
+  //   } else if (tries.length >= 9) {//시도횟수 확인
+  //     this.setState({
+  //       result:`${value} : You failed😓 정답 : ${joinAnswer} `,
+  //     })
+  //   } else {//s,b 출력
+  //     this.setState((prevState) => {
+  //       tries:[...prevState.tries, {try: value, result: `${strike}S ${ball}B`}],
+  //     })
+  //     strikeAndBall(number);
+  //   }
+  // }
   onSubmitForm = (e) => {
     e.preventDefault();
     const {result, value, tries, answer} = this.state;//구조분해
